@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Especial - Diamantes Free Fire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-gamer, .font-mono {
+            font-family: 'Orbitron', 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Hide scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffba00;
+        }
+
+        .container {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23ffba00" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="%230a0a0a"/><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+        }
+
+        .content {
+            width: 100%;
+            max-width: 600px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ffba00;
+            filter: drop-shadow(0 0 20px rgba(255, 186, 0, 0.3));
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .divider {
+            width: 100%;
+            height: 4px;
+            background-color: #ffba00;
+            transform: skewX(-20deg);
+            box-shadow: 0 0 10px #ffba00;
+            opacity: 0.8;
+            max-width: 300px;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            display: block;
+            color: #a0a0a0;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.8em;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .card {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(24, 24, 27, 0.8);
+            border-left: 4px solid #ffba00;
+            border-radius: 0 0.5rem 0.5rem 0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(4px);
+            margin-bottom: 2rem;
+        }
+
+        .card-title {
+            color: #ffba00;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #ffba00;
+        }
+
+        .card-text {
+            color: #d0d0d0;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-text strong {
+            color: #ffffff;
+            font-weight: 700;
+            font-style: italic;
+            text-decoration: underline;
+            text-decoration-color: #ffba00;
+            text-decoration-thickness: 2px;
+        }
+
+        .price-section {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 186, 0, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .price-item {
+            text-align: center;
+        }
+
+        .price-label {
+            color: #a0a0a0;
+            font-size: 0.75rem;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        .price-original {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+            text-decoration: line-through;
+        }
+
+        .price-arrow {
+            color: #ffba00;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .price-discount {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffba00;
+            filter: drop-shadow(0 0 10px rgba(255, 186, 0, 0.3));
+        }
+
+        .savings {
+            text-align: center;
+            color: #ffba00;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        .benefits-list {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefits-title {
+            color: #a0a0a0;
+            font-size: 0.75rem;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: #d0d0d0;
+            font-size: 0.95rem;
+        }
+
+        .benefit-check {
+            color: #ffba00;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .urgency-box {
+            background: rgba(255, 186, 0, 0.1);
+            border: 1px solid rgba(255, 186, 0, 0.3);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .urgency-title {
+            color: #ffba00;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .urgency-text {
+            color: #a0a0a0;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .button-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.25rem;
+            font-weight: bold;
+            background-color: #ffba00;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transform: skewX(-12deg);
+            box-shadow: 0 10px 30px rgba(255, 186, 0, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            box-shadow: 0 15px 40px rgba(255, 186, 0, 0.5);
+            transform: skewX(-12deg) translateY(-2px);
+        }
+
+        .btn-primary:active:not(:disabled) {
+            transform: skewX(-12deg) scale(0.95);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-primary-inner {
+            transform: skewX(12deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #a0a0a0;
+            border: 1px solid #4a4a4a;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: #ffba00;
+            color: #ffba00;
+        }
+
+        .footer {
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+            color: #a0a0a0;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffba00;
+        }
+
+        .footer-copyright {
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .price-discount {
+                font-size: 2rem;
+            }
+
+            .price-original {
+                font-size: 1.25rem;
+            }
+
+            .btn-primary {
+                font-size: 1rem;
+                padding: 1.25rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+        <div class="overlay"></div>
+
+        <main class="content">
+            <!-- Header Section -->
+            <div class="header">
+                <h1>OFERTA ESPECIAL</h1>
+                <div class="divider"></div>
+                <span class="subtitle">Desconto Exclusivo</span>
+            </div>
+
+            <!-- Main Card -->
+            <div class="card">
+                <!-- Card Title -->
+                <div class="card-title">Aproveite Agora</div>
+
+                <!-- Card Text -->
+                <p class="card-text">
+                    Você está prestes a sair. Não perca esta oportunidade! Ganhe <strong>6800 diamantes de graça</strong> e desbloqueie a <strong>skin oficial dos Feiticeiros Jujutsu</strong> com este desconto especial de <strong>40% OFF</strong>.
+                </p>
+
+                <!-- Price Section -->
+                <div class="price-section">
+                    <div class="price-container">
+                        <div class="price-item">
+                            <div class="price-label">Preço Original</div>
+                            <div class="price-original">R$ 19,90</div>
+                        </div>
+                        <div class="price-arrow">→</div>
+                        <div class="price-item">
+                            <div class="price-label">Seu Desconto</div>
+                            <div class="price-discount">R$ 11,90</div>
+                        </div>
+                    </div>
+                    <div class="savings">Você economiza: R$ 8,00</div>
+                </div>
+
+                <!-- Benefits List -->
+                <div class="benefits-list">
+                    <div class="benefits-title">O que você recebe:</div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <span>6800 diamantes grátis para comprar skins e itens</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <span>Skin oficial dos Feiticeiros Jujutsu desbloqueada</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <span>Bônus de elite e recompensas especiais</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <span>Acesso vitalício aos itens adquiridos</span>
+                    </div>
+                </div>
+
+                <!-- Urgency Box -->
+                <div class="urgency-box">
+                    <div class="urgency-title">⚡ Oferta válida apenas nesta página</div>
+                    <div class="urgency-text">
+                        Esta é uma oferta exclusiva para quem está saindo do checkout. Não será disponível em outro lugar. Aproveite agora!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Container -->
+            <div class="button-container">
+                <button class="btn-primary" onclick="handleCheckout()">
+                    <div class="btn-primary-inner">
+                        Aproveitar Desconto
+                    </div>
+                </button>
+                <button class="btn-secondary" onclick="handleBack()">
+                    Voltar ao Checkout
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <span>|</span>
+                    <a href="#">Termos de Serviço</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2026 Garena Free Fire | Todos os direitos reservados.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function handleCheckout() {
+            const button = event.target.closest('.btn-primary');
+            button.disabled = true;
+            button.querySelector('.btn-primary-inner').textContent = 'PROCESSANDO...';
+            
+            // Redirect to checkout
+            setTimeout(() => {
+                window.location.href = 'https://www.pagamentos-seguro.link/checkout/ab0e0c2b-ece6-4c14-a746-f34116c4ef0a';
+            }, 500);
+        }
+
+        function handleBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
